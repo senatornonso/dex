@@ -6,105 +6,36 @@
     <title>Emmanuel Sitemaife | Tech Solutions Expert</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --secondary: #1e40af;
-            --accent: #3b82f6;
-            --light: #f8fafc;
-            --dark: #1e293b;
-            --gray: #64748b;
+            --primary: #00ff88;
+            --secondary: #007bff;
+            --accent: #00b4ff;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --light: #f0f0f0;
+            --gray: #333333;
         }
-        <section id="contact" class="contact">
-    <h2 class="section-title">Let's Work Together</h2>
-    <p style="max-width: 600px; margin: 0 auto 2rem;">Ready to take your online presence to the next level? Get in touch to discuss your project.</p>
-    
-    <div class="contact-form">
-        <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="project">Project Type</label>
-                <select id="project" name="project" required>
-                    <option value="">Select a service</option>
-                    <option value="Web Development">Web Development</option>
-                    <option value="SEO Optimization">SEO Optimization</option>
-                    <option value="Video Production">Video Production</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="message">Project Details</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            
-            <button type="submit" class="cta-button" style="border: none; cursor: pointer;">Send via WhatsApp</button>
-        </form>
-    </div>
-</section>
-
-<script>
-    function sendToWhatsApp(event) {
-        event.preventDefault();
-        
-        // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const project = document.getElementById('project').value;
-        const message = document.getElementById('message').value;
-        
-        // Format the message
-        const whatsappMessage = `New Contact Form Submission:
-        
-Name: ${name}
-Email: ${email}
-Project Type: ${project}
-Message: ${message}`;
-        
-        // Encode the message for URL
-        const encodedMessage = encodeURIComponent(whatsappMessage);
-        
-        // Your WhatsApp number (with country code, no + or 00)
-        const whatsappNumber = '2348183506198';
-        
-        // Create WhatsApp link
-        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-        
-        // Open in new tab
-        window.open(whatsappUrl, '_blank');
-        
-        // Optional: Reset form after submission
-        document.getElementById('whatsappForm').reset();
-    }
-</script>
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Courier New', monospace;
         }
         
         body {
-            background-color: var(--light);
-            color: var(--dark);
+            background-color: var(--dark);
+            color: var(--light);
             line-height: 1.6;
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--darker), var(--gray));
             color: white;
-            padding: 2rem 0;
+            padding: 3rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
+            border-bottom: 1px solid var(--primary);
         }
         
         .header-content {
@@ -116,45 +47,59 @@ Message: ${message}`;
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
         }
         
         .tagline {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 700px;
             margin: 0 auto 2rem;
+            color: var(--light);
         }
         
         .cta-button {
             display: inline-block;
-            background-color: white;
-            color: var(--primary);
+            background-color: var(--primary);
+            color: var(--dark);
             padding: 0.8rem 2rem;
-            border-radius: 50px;
+            border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s ease;
             margin: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+            background-color: #00e676;
         }
         
         .secondary-button {
             background-color: transparent;
-            color: white;
-            border: 2px solid white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .secondary-button:hover {
+            background-color: rgba(0, 255, 136, 0.1);
         }
         
         nav {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: var(--darker);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid var(--gray);
         }
         
         .nav-container {
@@ -170,6 +115,8 @@ Message: ${message}`;
             font-weight: bold;
             font-size: 1.5rem;
             color: var(--primary);
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
         }
         
         .nav-links {
@@ -183,17 +130,34 @@ Message: ${message}`;
         
         .nav-links a {
             text-decoration: none;
-            color: var(--dark);
+            color: var(--light);
             font-weight: 500;
             transition: color 0.3s ease;
+            font-family: 'Courier New', monospace;
+            position: relative;
         }
         
         .nav-links a:hover {
             color: var(--primary);
         }
         
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
         section {
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -201,8 +165,22 @@ Message: ${message}`;
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
-            font-size: 2rem;
-            color: var(--secondary);
+            font-size: 2.2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            bottom: -10px;
+            left: 25%;
+            background-color: var(--primary);
         }
         
         .services-grid {
@@ -212,21 +190,24 @@ Message: ${message}`;
         }
         
         .service-card {
-            background-color: white;
-            border-radius: 10px;
+            background-color: var(--darker);
+            border-radius: 5px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--gray);
         }
         
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 180, 255, 0.2);
+            border-color: var(--accent);
         }
         
         .service-img {
             height: 200px;
             overflow: hidden;
+            position: relative;
         }
         
         .service-img img {
@@ -247,11 +228,13 @@ Message: ${message}`;
         .service-title {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
-            color: var(--dark);
+            color: var(--primary);
         }
         
         .portfolio {
-            background-color: #f1f5f9;
+            background-color: var(--darker);
+            border-top: 1px solid var(--gray);
+            border-bottom: 1px solid var(--gray);
         }
         
         .portfolio-grid {
@@ -262,9 +245,10 @@ Message: ${message}`;
         
         .portfolio-item {
             position: relative;
-            border-radius: 10px;
+            border-radius: 5px;
             overflow: hidden;
             height: 250px;
+            border: 1px solid var(--gray);
         }
         
         .portfolio-img {
@@ -279,7 +263,7 @@ Message: ${message}`;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(37, 99, 235, 0.8);
+            background: rgba(0, 0, 0, 0.8);
             color: white;
             display: flex;
             flex-direction: column;
@@ -287,10 +271,18 @@ Message: ${message}`;
             align-items: center;
             opacity: 0;
             transition: opacity 0.3s ease;
+            padding: 1rem;
+            text-align: center;
         }
         
         .portfolio-item:hover .portfolio-overlay {
             opacity: 1;
+        }
+        
+        .portfolio-overlay h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
         }
         
         .video-container {
@@ -301,13 +293,14 @@ Message: ${message}`;
         .video-wrapper {
             max-width: 800px;
             margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
             overflow: hidden;
+            border: 1px solid var(--gray);
         }
         
         .testimonials {
-            background-color: white;
+            background-color: var(--darker);
         }
         
         .testimonial-grid {
@@ -317,15 +310,30 @@ Message: ${message}`;
         }
         
         .testimonial-card {
-            background-color: #f8fafc;
+            background-color: var(--dark);
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--gray);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: Georgia, serif;
         }
         
         .testimonial-text {
             font-style: italic;
             margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
         }
         
         .testimonial-author {
@@ -333,27 +341,106 @@ Message: ${message}`;
             color: var(--primary);
         }
         
-       
-        footer {
-            background-color: var(--dark);
+        .contact {
+            background: linear-gradient(135deg, var(--darker), var(--gray));
             color: white;
             text-align: center;
+            border-top: 1px solid var(--gray);
+        }
+        
+        .contact .section-title {
+            color: var(--primary);
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--darker);
             padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--gray);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--dark);
+            border: 1px solid var(--gray);
+            border-radius: 5px;
+            font-size: 1rem;
+            color: var(--light);
+            font-family: 'Courier New', monospace;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        footer {
+            background-color: var(--darker);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--gray);
         }
         
         .social-links {
-            margin: 1rem 0;
+            margin: 1.5rem 0;
         }
         
         .social-links a {
-            color: white;
-            margin: 0 0.5rem;
+            color: var(--light);
+            margin: 0 1rem;
             font-size: 1.5rem;
             transition: color 0.3s ease;
+            display: inline-block;
         }
         
         .social-links a:hover {
-            color: var(--accent);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .terminal-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 255, 136, 0.05),
+                rgba(0, 255, 136, 0.05) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.5;
         }
         
         @media (max-width: 768px) {
@@ -373,10 +460,29 @@ Message: ${message}`;
             h1 {
                 font-size: 2rem;
             }
+            
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+        
+        /* Matrix rain effect */
+        .matrix-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            pointer-events: none;
         }
     </style>
 </head>
 <body>
+    <div class="terminal-effect"></div>
+    <div class="matrix-container" id="matrix"></div>
+    
     <header>
         <div class="header-content">
             <h1>Emmanuel Sitemaife</h1>
@@ -391,7 +497,7 @@ Message: ${message}`;
     
     <nav>
         <div class="nav-container">
-            <div class="logo">ES Tech</div>
+            <div class="logo">ES TECH</div>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
@@ -406,31 +512,31 @@ Message: ${message}`;
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-img">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Web Development">
+                    <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Web Development">
                 </div>
                 <div class="service-content">
                     <h3 class="service-title">Web Development</h3>
-                    <p>Custom websites built to your specifications with clean code and responsive design that works on all devices.</p>
+                    <p>Custom websites built to your specifications with clean code and responsive design that works on all devices. Secure, fast, and optimized for performance.</p>
                 </div>
             </div>
             
             <div class="service-card">
                 <div class="service-img">
-                    <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="SEO Optimization">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="SEO Optimization">
                 </div>
                 <div class="service-content">
                     <h3 class="service-title">SEO Optimization</h3>
-                    <p>Improve your search engine rankings and drive more organic traffic to your website with proven SEO strategies.</p>
+                    <p>Improve your search engine rankings and drive more organic traffic to your website with proven SEO strategies tailored to your business needs.</p>
                 </div>
             </div>
             
             <div class="service-card">
                 <div class="service-img">
-                    <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Video Production">
+                    <img src="https://images.unsplash.com/photo-1574717024453-3545edf62d91?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Video Production">
                 </div>
                 <div class="service-content">
                     <h3 class="service-title">Video Production</h3>
-                    <p>Professional video creation and editing services for promotional content, tutorials, and more.</p>
+                    <p>Professional video creation and editing services for promotional content, tutorials, and more. High-quality production with engaging storytelling.</p>
                 </div>
             </div>
         </div>
@@ -443,7 +549,7 @@ Message: ${message}`;
                 <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 1" class="portfolio-img">
                 <div class="portfolio-overlay">
                     <h3>E-commerce Website</h3>
-                    <p>Fully responsive online store with payment integration</p>
+                    <p>Fully responsive online store with payment integration and admin dashboard</p>
                 </div>
             </div>
             
@@ -451,7 +557,7 @@ Message: ${message}`;
                 <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 2" class="portfolio-img">
                 <div class="portfolio-overlay">
                     <h3>SEO Campaign</h3>
-                    <p>Increased organic traffic by 300% in 6 months</p>
+                    <p>Increased organic traffic by 300% in 6 months for a local business</p>
                 </div>
             </div>
             
@@ -459,7 +565,7 @@ Message: ${message}`;
                 <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 3" class="portfolio-img">
                 <div class="portfolio-overlay">
                     <h3>Corporate Video</h3>
-                    <p>Brand promotional video with animation</p>
+                    <p>Brand promotional video with animation and professional voice-over</p>
                 </div>
             </div>
         </div>
@@ -476,9 +582,9 @@ Message: ${message}`;
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <img src="[YOUR_PROFILE_IMAGE_URL]" alt="Emmanuel Sitemaife" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 2rem; border: 5px solid var(--accent);">
+            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Emmanuel Sitemaife" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 2rem; border: 5px solid var(--primary);">
             <p>I'm Emmanuel Sitemaife, a passionate tech professional with expertise in web development, SEO optimization, and video production. With years of experience helping businesses establish their online presence, I combine technical skills with creative vision to deliver solutions that get results.</p>
-            <p>My approach is client-focused - I take the time to understand your unique needs and goals to create tailored solutions that help your business stand out online.</p>
+            <p>My approach is client-focused - I take the time to understand your unique needs and goals to create tailored solutions that help your business stand out online. I believe in clean code, user-friendly design, and measurable results.</p>
         </div>
     </section>
     
@@ -486,17 +592,17 @@ Message: ${message}`;
         <h2 class="section-title">Client Testimonials</h2>
         <div class="testimonial-grid">
             <div class="testimonial-card">
-                <p class="testimonial-text">"Emmanuel built our company website from scratch and it's been instrumental in growing our online sales. His attention to detail and understanding of our business needs was impressive."</p>
+                <p class="testimonial-text">"Emmanuel built our company website from scratch and it's been instrumental in growing our online sales. His attention to detail and understanding of our business needs was impressive. The site loads incredibly fast and looks great on all devices."</p>
                 <p class="testimonial-author">- Sarah Johnson, Retail Business Owner</p>
             </div>
             
             <div class="testimonial-card">
-                <p class="testimonial-text">"The SEO work Emmanuel did for our site tripled our organic traffic in just 4 months. His strategies are effective and his reporting is transparent."</p>
+                <p class="testimonial-text">"The SEO work Emmanuel did for our site tripled our organic traffic in just 4 months. His strategies are effective and his reporting is transparent. We've seen a significant increase in qualified leads since implementing his recommendations."</p>
                 <p class="testimonial-author">- Michael Chen, Marketing Director</p>
             </div>
             
             <div class="testimonial-card">
-                <p class="testimonial-text">"Our promotional video created by Emmanuel perfectly captured our brand identity. The quality exceeded our expectations and we've received countless compliments."</p>
+                <p class="testimonial-text">"Our promotional video created by Emmanuel perfectly captured our brand identity. The quality exceeded our expectations and we've received countless compliments. The video has helped us secure several high-profile clients."</p>
                 <p class="testimonial-author">- Amina Diallo, Startup Founder</p>
             </div>
         </div>
@@ -507,48 +613,138 @@ Message: ${message}`;
         <p style="max-width: 600px; margin: 0 auto 2rem;">Ready to take your online presence to the next level? Get in touch to discuss your project.</p>
         
         <div class="contact-form">
-            <form>
+            <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
                 <div class="form-group">
                     <label for="name">Your Name</label>
-                    <input type="text" id="name" required>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
                 </div>
                 
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
                 </div>
                 
                 <div class="form-group">
                     <label for="project">Project Type</label>
-                    <input type="text" id="project" required>
+                    <select id="project" name="project" required>
+                        <option value="">Select a service</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="SEO Optimization">SEO Optimization</option>
+                        <option value="Video Production">Video Production</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </div>
                 
                 <div class="form-group">
                     <label for="message">Project Details</label>
-                    <textarea id="message" required></textarea>
+                    <textarea id="message" name="message" required placeholder="Tell me about your project..."></textarea>
                 </div>
                 
-                <button type="submit" class="cta-button" style="border: none; cursor: pointer;">Send Message</button>
+                <button type="submit" class="cta-button">Send via WhatsApp</button>
             </form>
         </div>
     </section>
     
     <footer>
-        <div class="logo" style="color: white; font-size: 1.8rem;">Emmanuel Sitemaife</div>
+        <div class="logo" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;">Emmanuel Sitemaife</div>
         <p>Developer | SEO Expert | Video Creator | Tech Solutions Provider</p>
         
         <div class="social-links">
-            <a href="https://web.facebook.com/senatornonso"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="https://web.instagram.com/senatornonso"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/senatornonso"><i class="fab fa-github"></i></a>
+            <a href="https://web.facebook.com/senatornonso" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://web.instagram.com/senatornonso" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/senatornonso" title="GitHub"><i class="fab fa-github"></i></a>
         </div>
         
-        <p>&copy; 2023 Emmanuel Sitemaife. All rights reserved.</p>
+        <p style="margin-top: 2rem;">&copy; <script>document.write(new Date().getFullYear())</script> Emmanuel Sitemaife. All rights reserved.</p>
     </footer>
     
     <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <!-- WhatsApp Integration Script -->
+    <script>
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const project = document.getElementById('project').value;
+            const message = document.getElementById('message').value;
+            
+            // Format the message
+            const whatsappMessage = `📌 *New Contact Form Submission* 📌
+            
+👤 *Name:* ${name}
+📧 *Email:* ${email}
+💼 *Project Type:* ${project}
+📝 *Message:*
+${message}
+            
+_I received this message through my portfolio website._`;
+            
+            // Encode the message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Your WhatsApp number (with country code, no + or 00)
+            const whatsappNumber = '2348183506198';
+            
+            // Create WhatsApp link
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // Open in new tab
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form after submission
+            document.getElementById('whatsappForm').reset();
+            
+            // Optional: Show confirmation message
+            alert('Thank you! WhatsApp will now open with your message ready to send.');
+        }
+    </script>
+    
+    <!-- Matrix Rain Effect Script -->
+    <script>
+        // Simple matrix rain effect
+        const matrix = document.getElementById('matrix');
+        const canvas = document.createElement('canvas');
+        matrix.appendChild(canvas);
+        
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+        
+        const ctx = canvas.getContext('2d');
+        const w = canvas.width;
+        const h = canvas.height;
+        
+        ctx.fillStyle = '#000';
+        ctx.fillRect(0, 0, w, h);
+        
+        const cols = Math.floor(w / 20) + 1;
+        const ypos = Array(cols).fill(0);
+        
+        function matrixRain() {
+            ctx.fillStyle = '#0001';
+            ctx.fillRect(0, 0, w, h);
+            
+            ctx.fillStyle = '#0f0';
+            ctx.font = '15pt monospace';
+            
+            ypos.forEach((y, ind) => {
+                const text = String.fromCharCode(Math.random() * 128);
+                const x = ind * 20;
+                ctx.fillText(text, x, y);
+                
+                if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+                else ypos[ind] = y + 20;
+            });
+        }
+        
+        setInterval(matrixRain, 50);
+    </script>
 </body>
 </html>
